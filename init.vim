@@ -2,6 +2,25 @@ call plug#begin()
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:python_host_prog='/usr/bin/python'
 
+set number relativenumber
+set hlsearch
+set laststatus=2
+set vb
+set ruler
+set spelllang=en_us
+set autoindent
+set mouse=a
+set clipboard=unnamed
+set noscrollbind
+set wildmenu
+set autochdir
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 
@@ -11,6 +30,11 @@ nnoremap <C-b> :
 autocmd BufEnter * call ncm2#enable_for_buffer()
 
 set completeopt=noinsert,menuone,noselect
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-commentary'
+Plug 'mkitt/tabline.vim'
 
 " - Code completion
 Plug 'ncm2/ncm2-bufword'
@@ -29,9 +53,13 @@ let g:airline_powerline_fonts=1
 
 " - Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " - Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" - Theme
+Plug 'NLKNguyen/papercolor-theme'
 
 Plug 'morhetz/gruvbox'
 
