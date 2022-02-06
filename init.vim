@@ -57,13 +57,24 @@ Plug 'airblade/vim-gitgutter'
 
 " - Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips'
+
 
 " - Theme
 Plug 'NLKNguyen/papercolor-theme'
+" set termguicolors
+" set background=dark
+
 
 Plug 'morhetz/gruvbox'
+
 
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 call plug#end()
+
+" set termguicolors
+set background=dark
+colorscheme PaperColor
