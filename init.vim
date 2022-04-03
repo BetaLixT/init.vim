@@ -23,6 +23,10 @@ noremap <Right> <NOP>
 
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
+Plug 'tpope/vim-dispatch'
+Plug 'Shougo/vimproc.vim'
+Plug 'dense-analysis/ale'
+Plug 'puremourning/vimspector'
 
 nnoremap <C-b> :
 
@@ -60,9 +64,16 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 
+" - C#
+Plug 'OmniSharp/omnisharp-vim'
+let g:OmniSharp_server_stdio = 1
+let g:OmniSharp_server_use_net6 = 1
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
 
 " - Theme
-Plug 'NLKNguyen/papercolor-theme'
+" Plug 'NLKNguyen/papercolor-theme'
 " set termguicolors
 " set background=dark
 
@@ -77,4 +88,4 @@ call plug#end()
 
 " set termguicolors
 set background=dark
-colorscheme PaperColor
+colorscheme Gruvbox
