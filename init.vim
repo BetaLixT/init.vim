@@ -27,7 +27,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'Shougo/vimproc.vim'
 Plug 'dense-analysis/ale'
 Plug 'puremourning/vimspector'
-
+inoremap <expr> <TAB> pumvisible() ? "<C-y>" : "<TAB>"
 nnoremap <C-b> :
 
 " enable ncm2 for all buffers
@@ -84,6 +84,23 @@ Plug 'morhetz/gruvbox'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+let g:UltiSnipsExpandTrigger = '<f6>'
+
+" - coc
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 call plug#end()
 
 " set termguicolors
